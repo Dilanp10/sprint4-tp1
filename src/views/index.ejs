@@ -1,0 +1,59 @@
+<div class="main-container relative">
+    <!-- <p class="overlay-text">¡Descubre los secretos del Torneo del Poder y los desafíos que enfrentan los Guerreros Z en su lucha por salvar el multiverso!</p> -->
+  </div>
+  
+  <section class="py-20" id="batallas-epicas">
+    <div class="container mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-12 neon-text">algunos superheroe</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="card">
+          <h3 class="text-xl font-semibold">Batman</h3>
+          <img class="mt-4" src="/imagen/batman.jpg" alt="Goku" style="width: 100%; height: 300px; object-fit: cover;">
+          <p class="mt-4 text-left">
+            Batman es un vigilante enmascarado que utiliza su riqueza, inteligencia y habilidades fisicas para combatir el crimen y proteger a los inocentes.
+          </p>
+        </div>
+  
+        <!-- Card 2 -->
+        <div class="card">
+          <h3 class="text-xl font-semibold">Spiderman</h3>
+          <img class="mt-4" src="/imagen/spiderman.jpg" alt="spiderman" style="width: 100%; height: 300px; object-fit: cover;">
+          <p class="mt-4 text-left">
+            un joven estudiante que es mordido por una araña radiactiva y adquiere superpoderes como fuerza, agilidad y la habilidad de adherirse a superficies.
+          </p>
+        </div>
+  
+        <!-- Card 3 -->
+        <div class="card">
+          <h3 class="text-xl font-semibold">Superman</h3>
+          <img class="mt-4" src="/imagen/superman.jpg" alt="Superman" style="width: 100%; height: 300px; object-fit: cover;">
+          <p class="mt-4 text-left">
+            Superman es un símbolo de esperanza y justicia, utilizando sus increíbles poderes para ayudar a los demás y combatir el crimen
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <script>
+  const cards = document.querySelectorAll('.card');
+  
+  cards.forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+  
+      const xPercent = (x / rect.width - 0.5) * 20;
+      const yPercent = (y / rect.height - 0.5) * 20;
+  
+      card.style.transform = `rotateX(${-yPercent}deg) rotateY(${xPercent}deg) scale(1.05)`;
+    });
+  
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
+  });
+  </script>
+  
